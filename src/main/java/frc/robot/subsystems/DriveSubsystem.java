@@ -134,7 +134,7 @@ public class DriveSubsystem extends SubsystemBase {
 
        final SwerveConfig config = SwerveConfig.defaultConfig;
 
-       pigeon = new Pigeon2(0);
+       pigeon = new Pigeon2(18);
        pConfig = new Pigeon2Configuration();
        pConfig.MountPosePitch = MOUNT_PITCH;
        pConfig.MountPoseRoll = MOUNT_ROLL;
@@ -237,7 +237,7 @@ public class DriveSubsystem extends SubsystemBase {
     public static Rotation2d getGyroscopeRotation() {
         // We have to invert the angle of the NavX so that rotating the robot
         // counter-clockwise makes the angle increase.
-        return Rotation2d.fromDegrees(360.0 - pigeon.getYaw());
+        return Rotation2d.fromDegrees(360.0 + pigeon.getYaw());
     }
 
     public void drive(ChassisSpeeds chassisSpeeds) {
