@@ -118,7 +118,7 @@ public class RobotContainer {
                         //1,0,0,
                         MathUtil.applyDeadband(con1.getLeftY(), 0.1)*speedScale,
                         MathUtil.applyDeadband(con1.getLeftX(), 0.1)*speedScale,
-                        MathUtil.applyDeadband(con1.getRightX(), 0.1)*1.5*speedScale, 
+                        MathUtil.applyDeadband(con1.getRightX(), 0.1)*1.75*speedScale, 
                         DriveSubsystem.getGyroscopeRotation())
                     ),
                     swerve
@@ -238,6 +238,7 @@ public class RobotContainer {
      * @return the command to run in autonomous
      */
     public Command getAutonomousCommand() {
+        swerve.zeroGyroscope();
         // An ExampleCommand will run in autonomous
         
         // return test;
